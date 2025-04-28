@@ -1,5 +1,5 @@
-from app.models import get_model
-from app.retriever import retrieve_examples
+from models import get_model
+from retriever import retrieve_examples
 import os
 import re  # <--- Tämä tarvitaan URLin tunnistukseen
 from bs4 import BeautifulSoup
