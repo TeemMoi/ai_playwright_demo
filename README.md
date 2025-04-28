@@ -2,6 +2,31 @@
 
 This project generates Playwright test code based on natural language input by utilizing a GPT model and the RAG method (Retrieval-Augmented Generation).
 
+## Prerequisites (Quickstart)
+
+Before running the project, make sure you have:
+
+### Google Gemini API Key (optional)
+- Get your key from [Google AI Studio](https://makersuite.google.com/)
+- Save it in a `secrets.toml` file:
+```
+(On Windows: `C:\Users\<YourUsername>\.streamlit\secrets.toml`)
+
+- Example contents of `secrets.toml`:
+google_api_key = "YOUR_API_KEY_HERE"
+```
+
+### Python 3.8+
+- Download from [python.org](https://www.python.org/downloads/)
+- Check Python version:
+```
+bash
+python --version
+```
+Then setup python virtual environment
+
+`python -m venv venv`
+
 ## Getting Started
 
 ```
