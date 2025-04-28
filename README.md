@@ -9,6 +9,13 @@ Before running the project, make sure you have:
 ### Google Gemini API Key (optional)
 - Get your key from [Google AI Studio](https://makersuite.google.com/)
 - Save it in a `secrets.toml` file:
+```
+(On Windows: `C:\Users\<YourUsername>\.streamlit\secrets.toml`)
+
+- Example contents of `secrets.toml`:
+toml
+google_api_key = "YOUR_API_KEY_HERE"
+```
 
 ### Python 3.8+
 - Download from [python.org](https://www.python.org/downloads/)
