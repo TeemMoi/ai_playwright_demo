@@ -25,7 +25,7 @@ python --version
 ```
 Then setup python virtual environment
 
-```python -m venv venv
+`python -m venv venv`
 
 ## Getting Started
 
