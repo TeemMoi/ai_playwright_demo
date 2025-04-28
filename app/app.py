@@ -1,5 +1,5 @@
 import streamlit as st
-from generate_test import generate_code
+from app.generate_test import generate_code
 
 st.title("Playwright-testigeneraattori")
 prompt = st.text_area("Anna testikuvaus suomeksi")
