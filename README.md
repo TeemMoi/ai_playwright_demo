@@ -12,13 +12,13 @@ streamlit run app.py
 
 ## Project Structure
 
-app.py — Streamlit-based user interface
-generate_test.py — Logic for building the prompt, URL detection, model generation, and HTML analysis
-examples.jsonl — Example pairs (description + code)
-best_practices.txt — Playwright best practices that are automatically included in the prompt
-retriever.py — Retrieval of examples from training data
-models.py — Model initialization (Transformer models, Gemini, etc.)
-requirements.txt — Required Python libraries
+- app.py — Streamlit-based user interface
+- generate_test.py — Logic for building the prompt, URL detection, model generation, and HTML analysis
+- examples.jsonl — Example pairs (description + code)
+- best_practices.txt — Playwright best practices that are automatically included in the prompt
+- retriever.py — Retrieval of examples from training data
+- models.py — Model initialization (Transformer models, Gemini, etc.)
+- requirements.txt — Required Python libraries
 
 ## Example Data
 
