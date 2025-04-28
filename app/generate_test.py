@@ -38,8 +38,6 @@ def build_prompt(user_prompt, page_elements=None):
 
     return f"Tässä on esimerkkejä:\n\n{example_block}\n\n{element_block}\n{best_practices}\n\nTee uusi testi kuvaukselle: {user_prompt}\nCode:\n"
 
-
-
 def generate_code(user_prompt):
     model = get_model()
     
@@ -64,15 +62,25 @@ def fetch_page_elements(url):
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
-        
+
         buttons = [btn.get_text(strip=True) for btn in soup.find_all('button')]
         inputs = [inp.get('name') or inp.get('id') or '' for inp in soup.find_all('input')]
         links = [a.get('href') or '' for a in soup.find_all('a')]
-        
+        headings = [h.get_text(strip=True) for h in soup.find_all(['h1', 'h2', 'h3'])]
+        labels = [label.get_text(strip=True) for label in soup.find_all('label')]
+        selects = [select.get('name') or select.get('id') for select in soup.find_all('select')]
+        textareas = [ta.get('name') or ta.get('id') for ta in soup.find_all('textarea')]
+        images = [img.get('alt') for img in soup.find_all('img') if img.get('alt')]
+
         return {
             "buttons": buttons,
             "inputs": inputs,
-            "links": links
+            "links": links,
+            "headings": headings,
+            "labels": labels,
+            "selects": selects,
+            "textareas": textareas,
+            "images": images,
         }
     except Exception as e:
         print(f"Failed to fetch or parse URL: {e}")
