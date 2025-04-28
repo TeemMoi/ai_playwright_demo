@@ -13,7 +13,6 @@ Before running the project, make sure you have:
 (On Windows: `C:\Users\<YourUsername>\.streamlit\secrets.toml`)
 
 - Example contents of `secrets.toml`:
-toml
 google_api_key = "YOUR_API_KEY_HERE"
 ```
 
