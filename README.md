@@ -5,12 +5,13 @@ This project generates Playwright test code based on natural language input by u
 ## Getting Started
 
 
-pip install -r requirements.txt
-streamlit run app.py
+> pip install -r requirements.txt
+> streamlit run app.py
 
 
 
 ## Project Structure
+
     app.py — Streamlit-based user interface
     generate_test.py — Logic for building the prompt, URL detection, model generation, and HTML analysis
     examples.jsonl — Example pairs (description + code)
@@ -20,9 +21,9 @@ streamlit run app.py
     requirements.txt — Required Python libraries
 
 ## Example Data
+
     examples.jsonl contains prompt-code pairs in the following format:
     {"prompt": "Verify successful login", "code": "test('login works', async ({ page }) => {\\n  await page.goto('https://example.com/login');\\n  await page.fill('#username', 'user');\\n  await page.fill('#password', 'pass');\\n  await page.click('#login');\\n  await expect(page.locator('text=Tervetuloa')).toBeVisible();\\n});"}
-
 
 ## Best Practices Guidelines
     The best_practices.txt file contains Playwright best practices:
