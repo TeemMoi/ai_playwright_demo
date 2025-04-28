@@ -3,10 +3,11 @@
 This project generates Playwright test code based on natural language input by utilizing a GPT model and the RAG method (Retrieval-Augmented Generation).
 
 ## Getting Started
-```
+
+
 pip install -r requirements.txt
 streamlit run app.py
-```
+
 
 
 ## Project Structure
@@ -20,10 +21,7 @@ streamlit run app.py
 
 ## Example Data
     examples.jsonl contains prompt-code pairs in the following format:
-    
-    ```
     {"prompt": "Verify successful login", "code": "test('login works', async ({ page }) => {\\n  await page.goto('https://example.com/login');\\n  await page.fill('#username', 'user');\\n  await page.fill('#password', 'pass');\\n  await page.click('#login');\\n  await expect(page.locator('text=Tervetuloa')).toBeVisible();\\n});"}
-    ```
 
 
 ## Best Practices Guidelines
