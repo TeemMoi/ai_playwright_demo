@@ -28,16 +28,16 @@ examples.jsonl contains prompt-code pairs in the following format:
 ```
 ## Best Practices Guidelines
 The best_practices.txt file contains Playwright best practices:
-Use user-centered selectors like getByRole, getByLabel, getByText
-Automatically wait for elements to appear; avoid hardcoded delays (waitForTimeout)
-Write clear and descriptive test names
-Follow the DRY principle (Don't Repeat Yourself)
-Test the application from a real user's perspective
-Use the Page Object Model structure in larger projects
+* Use user-centered selectors like getByRole, getByLabel, getByText
+* Automatically wait for elements to appear; avoid hardcoded delays (waitForTimeout)
+* Write clear and descriptive test names
+* Follow the DRY principle (Don't Repeat Yourself)
+* Test the application from a real user's perspective
+* Use the Page Object Model structure in larger projects
 
 
 ## Additional Features
-URL detection: The system detects a URL from the user's prompt and fetches elements from that page automatically.
-HTML element analysis: Extracted buttons, input fields, and links are added to the model's prompt.
-Prompt enrichment: Examples, discovered elements, and best practices guidelines are combined into the input for the model to generate the best possible code.
-After navigation to a new page, the HTML can be re-analyzed and updated with the new element information.
+- URL detection: The system detects a URL from the user's prompt and fetches elements from that page automatically.
+- HTML element analysis: Extracted buttons, input fields, and links are added to the model's prompt.
+- Prompt enrichment: Examples, discovered elements, and best practices guidelines are combined into the input for the model to generate the best possible code.
+- After navigation to a new page, the HTML can be re-analyzed and updated with the new element information.
