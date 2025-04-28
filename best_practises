@@ -1,0 +1,12 @@
+Muista kirjoittaa Playwright-testit seuraavien parhaiden käytäntöjen mukaisesti:
+
+- Käytä käyttäjäkeskeisiä selektoreita kuten 'getByRole', 'getByLabel', 'getByText' äläkä kovakoodattuja CSS-selektoreita
+- Odota automaattisesti elementtien ilmestymistä, vältä kovakoodattuja odotuksia kuten 'waitForTimeout'
+- Käytä selkeitä ja kuvaavia testinimiä, jotka kertovat testin tarkoituksen
+- Testaa sovellusta käyttäjän näkökulmasta: mitä käyttäjä näkee ja tekee
+- Pidä testilogiikka yksinkertaisena ja vältä koodin toistoa (noudata DRY-periaatetta)
+- Käytä Page Object Model (POM) -rakennetta isommissa projekteissa hallitsemaan toistuvia sivuelementtejä
+- Kirjoita testit luettavaksi ja ylläpidettäväksi tiimillesi
+- Käytä oletusodotuksia (implicit waits), älä manuaalisia viiveitä
+- Määritä testikonteksti selkeästi: missä olet ja mitä tarkistat
+- älä käytä goto-funktiota
