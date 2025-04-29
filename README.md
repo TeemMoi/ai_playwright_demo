@@ -6,7 +6,7 @@ This project generates Playwright test code based on natural language input by u
 
 Before running the project, make sure you have:
 
-### Google Gemini API Key (optional)
+### Google Gemini API Key
 - Get your key from [Google AI Studio](https://makersuite.google.com/)
 - Save it in a `secrets.toml` file:
 ```
