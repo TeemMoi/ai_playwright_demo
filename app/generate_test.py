@@ -19,28 +19,31 @@ def build_prompt(user_prompt, page_elements=None):
 
     element_block = ""
     if page_elements:
-        buttons = ", ".join(page_elements.get('buttons', []))
-        inputs = ", ".join(page_elements.get('inputs', []))
-        links = ", ".join(page_elements.get('links', []))
+        def format_list(items, title):
+            if items:
+                return f"- {title}: {', '.join([i for i in items if i])}\n"
+            return ""
 
-        element_block = (
-            "\n\nSivulta löytyi seuraavat elementit:\n"
-            f"- Nappulat: {buttons}\n"
-            f"- Lomakekentät: {inputs}\n"
-            f"- Linkit: {links}\n"
-        )
+        element_block = "\n\nElements found on the page:\n"
+        element_block += format_list(page_elements.get('buttons'), "Buttons")
+        element_block += format_list(page_elements.get('inputs'), "Inputs")
+        element_block += format_list(page_elements.get('links'), "Links")
+        element_block += format_list(page_elements.get('headings'), "Headings")
+        element_block += format_list(page_elements.get('labels'), "Labels")
+        element_block += format_list(page_elements.get('selects'), "Select dropdowns")
+        element_block += format_list(page_elements.get('textareas'), "Textareas")
+        element_block += format_list(page_elements.get('images'), "Images")
 
     best_practices = ""
     best_practices_path = os.path.join(os.path.dirname(__file__), "best_practices.txt")
     if os.path.exists(best_practices_path):
         with open(best_practices_path, "r", encoding="utf-8") as f:
-            best_practices = "\n\nPlaywrightin parhaat käytännöt:\n" + f.read()
+            best_practices = "\n\nPlaywright Best Practices:\n" + f.read()
 
-    return f"Tässä on esimerkkejä:\n\n{example_block}\n\n{element_block}\n{best_practices}\n\nTee uusi testi kuvaukselle: {user_prompt}\nCode:\n"
+    return f"examples:\n\n{example_block}\n\n{element_block}\n{best_practices}\n\nCreate a new test for the following description: {user_prompt}\nCode:\n"
 
 def generate_code(user_prompt):
     model = get_model()
-    
     url = extract_url(user_prompt)
     page_elements = None
 
@@ -54,6 +57,7 @@ def generate_code(user_prompt):
 
     prompt = build_prompt(user_prompt, page_elements)
 
+    
     output = model(prompt)
     return output if isinstance(output, str) else output[0]["generated_text"]
 
